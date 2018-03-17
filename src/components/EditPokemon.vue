@@ -1,6 +1,6 @@
 <template>
   <div id = "edit-pokemon">
-    <h2>Edit Pokemon</h2>
+    <h3>Edit Pokemon</h3>
   </div>
 </template>
 
