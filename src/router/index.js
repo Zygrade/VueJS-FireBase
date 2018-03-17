@@ -25,7 +25,7 @@ export default new Router({
       component: EditPokemon
     },
     {
-      path: '/view',
+      path: '/:pokemon_id',
       name: 'view-pokemon',
       component: ViewPokemon
     }

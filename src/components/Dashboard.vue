@@ -1,19 +1,23 @@
 <template>
   <div id = "dashboard">
-    <h4>Pokemons seen</h4>
+    <h4>Pokemons seen till now</h4>
      <ul class="collection">
 
       <li class="collection-item" v-for="pokemon in pokemons" v-bind:key="pokemon.id">
         <div class="chip"> {{pokemon.pokemon_id}} </div>           {{ pokemon.name }}                <div class="chip"> {{pokemon.type}} </div>
+
+        <router-link class="secondary-content" v-bind:to="{name : 'view-pokemon', params : {pokemon_id : pokemon.pokemon_id}}">
+        <i class="fa fa-pencil"></i>
+        </router-link>
       </li>
     </ul>
 
 
-      <div class="fixed-action-btn">
-        <router-link to="/new" class="btn-floating btn-large red">
-          <i class="fa fa-plus"></i>
-        </router-link>
-      </div>
+    <div class="fixed-action-btn">
+      <router-link to="/new" class="btn-floating btn-large red">
+        <i class="fa fa-plus"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
