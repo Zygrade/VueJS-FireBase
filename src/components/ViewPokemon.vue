@@ -15,6 +15,11 @@
     <router-link to="/" class="btn blue">BACK</router-link>
     <button class="btn red" @click="deletePokemon">Delete</button>
 
+    <div class="fixed-action-btn">
+      <router-link v-bind:to="{ name: 'edit-pokemon', params: { pokemon_id: pokemon_id }}" class="btn-floating btn-large red">
+        <i class="fa fa-pencil"></i>
+      </router-link>
+    </div>
 
   </div>
 </template>
@@ -25,7 +30,7 @@ import db from './firebaseInit'
     name : 'view-pokemon',
     data () {
       return {
-        pokedex : null,
+        pokemon_id : null,
         name : null,
         type : null,
         region : null
@@ -33,8 +38,8 @@ import db from './firebaseInit'
     },
 
     beforeRouteEnter(to,from,next) {
-      db.collection('pokemons').where('pokedex','==',to.params.pokemon_id).get().
-      then(snapshot => {
+      db.collection('pokemons').where('pokedex','==',to.params.pokemon_id).get()
+       .then(snapshot => {
         snapshot.forEach(doc => {
           next(vm => {
             vm.pokemon_id = doc.data().pokedex
@@ -51,8 +56,8 @@ import db from './firebaseInit'
     },
 
     methods : {
-      fetchdata() {
-        db.collection('pokemons').where('pokedex','==',this.$route.params.pokeon_id).get().
+      fetchData() {
+        db.collection('pokemons').where('pokedex','==',this.$route.params.pokemon_id).get().
         then(snapshot => {
           snapshot.forEach(doc => {
               this.pokemon_id = doc.data().pokedex
