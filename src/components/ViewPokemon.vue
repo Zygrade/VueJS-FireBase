@@ -65,7 +65,7 @@ import db from './firebaseInit'
 
         deletePokemon () {
           if(confirm('Do you want to delete this pokemon\'s information ?')) {
-            db.collection('pokemons').where('pokedex','==',this.$route.params).get().
+            db.collection('pokemons').where('pokedex','==',this.$route.params.pokemon_id).get().
               then(snapshot => {
                 snapshot.forEach(doc => {
                   doc.ref.delete();
