@@ -2,7 +2,7 @@
   <nav>
     <div class="nav-wrapper red">
       <div class="container">
-        <router-link to="/" class="brand-logo">Pokedex</router-link>
+        <router-link to="/" class="brand-logo">POKEDEX</router-link>
       </div>
     </div>
   </nav>

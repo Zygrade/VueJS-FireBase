@@ -1,6 +1,8 @@
 <template>
   <div id = "dashboard">
+    <br>
     <h4>Pokemons seen till now</h4>
+    <br>
      <ul class="collection">
 
       <li class="collection-item" v-for="pokemon in pokemons" v-bind:key="pokemon.id">
@@ -14,7 +16,7 @@
 
 
     <div class="fixed-action-btn">
-      <router-link to="/new" class="btn-floating btn-large red">
+      <router-link to="/new" class="btn-floating btn-large blue">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>

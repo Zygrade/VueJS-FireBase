@@ -16,7 +16,7 @@
     <button class="btn red" @click="deletePokemon">Delete</button>
 
     <div class="fixed-action-btn">
-      <router-link v-bind:to="{ name: 'edit-pokemon', params: { pokemon_id: pokemon_id }}" class="btn-floating btn-large red">
+      <router-link v-bind:to="{ name: 'edit-pokemon', params: { pokemon_id: pokemon_id }}" class="btn-floating btn-large blue">
         <i class="fa fa-pencil"></i>
       </router-link>
     </div>
